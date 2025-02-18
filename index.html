@@ -1,1146 +1,178 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html>
-        <head>
-                <meta charset="utf-8" />
-                <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-                <title>Přihlášení do Seznamu</title>
-                <meta name="description" content="Přihlášením do jednoho účtu můžete používat vše od Seznamu. Email, Mapy, Sreality, Stream, firemní profil Seznam naplno a mnohem víc." />
-                <link rel="shortcut icon" href="/static/img/favicon.ico" />
-                <link rel="apple-touch-icon" href="/static/img/apple-touch-icon.png" />
-                <link rel="stylesheet" href="/static/css/app.css?3.2.227-98d348fd9155165cb6530417a1313c85b4ffef80" />
-
-                <script src="//h.seznam.cz/js/dot-small.js" crossorigin></script>
-                <script id="conf" type="application/json">
-                {
-                        "szncmpone": "0",
-                        "version": "3.2.227-98d348fd9155165cb6530417a1313c85b4ffef80",
-                        "page": "login",
-                        "query": {"returnURL": ["https://email.seznam.cz/"]},
-                        "tld_suffix": "cz",
-                        "lang": "cs",
-                        "neznam": {
-                                "client_id": "WE93AqdCT99Ap7X6enid788LCYh4vqNhiQyqRAde",
-                                "address": "https://auth2.szn.cz",
-                                "redirect_uri": "https://login.szn.cz/api/v1/idp/result/neznam"
-                        },
-                        "google": {
-                                "client_id": "429397748212-t8nlo82d3uv9mcrj5nusghge15p6s9g0.apps.googleusercontent.com",
-                                "address": "https://accounts.google.com",
-                                "redirect_uri": "https://login.szn.cz/api/v1/idp/result/google"
-                        },
-                        "azure": {
-                                "client_id": "8085427e-3b1a-4b11-9ff7-cb649748a48b",
-                                "address": "https://login.microsoftonline.com/consumers/v2.0",
-                                "redirect_uri": "https://login.szn.cz/api/v1/idp/result/azure"
-                        },
-                        "apple": {
-                                "client_id": "cz.seznam.applelogin",
-                                "address": "https://appleid.apple.com",
-                                "redirect_uri": "https://login.szn.cz/api/v1/idp/result/apple"
-                        },
-                        "fb": {
-                                "client_id": "",
-                                "address": "https://www.facebook.com",
-                                "redirect_uri": "https://login.szn.cz/api/v1/idp/result/facebook"
-                        },
-                        "logged_users": [],
-
-
-                                "return_url": "https://email.seznam.cz/",
-
-
-                                "service": "ucet",
-
-
-
-
-
-
-
-
-
-                        "neznam_domains": ["adminclanky.seznam.cz", "agsr.cz", "apiclanky.seznam.cz", "borgis.cz", "borgis.eu", "classicpraha.cz", "community.mapy.com", "community.mapy.cz", "company.seznam.cz", "czech-properties.cz", "czech-properties.eu", "czechadid.cz", "czechproperties.cz", "czechproperties.eu", "czechproperties.info", "denik-pravo.cz", "domena.seznam.cz", "doporuceni.stream.cz", "doporuceni.streamtv.cz", "doporuceni.zbozi.cz", "e-denik.cz", "edenik.cz", "emailprofi.cz", "euhomes.net", "expresfm.cz", "festivalovy-denik.cz", "festivalovydenik.cz", "firma-smtp.seznam.cz", "firma.borgis.cz", "firma.mapy.cz", "firma.seznam.cz", "firma.seznam.sk", "firma.stream.cz", "firmy.cz", "flashdate.cz", "flashgame.cz", "flashgames.cz", "flashnet.cz", "flashnews.cz", "flashnews.eu", "frm.seznam.cz", "gitlab.seznam.net", "hry.cz", "i-den.cz", "iden.cz", "im.cz", "imajs.io", "imedia.cz", "info.seznam.cz", "infomagazin.cz", "ise.kancelar.seznam.cz", "kancelar.seznam.cz", "lide.cz", "listicka.cz", "lukacovic.cz", "mailer-daemon.firma.seznam.cz", "mailprofi.cz", "mapy.com", "mapy.cz", "mixer.cz", "my-new-home.eu", "mynewhome.eu", "neotypia.cz", "neotypia.eu", "o-seznam.cz", "posila.seznam.cz", "ppchit.cz", "pravo.cz", "pravo.eu", "predplatne.pravo.cz", "pripojuji.se", "pripojujise.cz", "pro-zeny.cz", "proseznam.cz", "prozeny.cz", "pubtran.cz", "rude-pravo.cz", "rudepravo.cz", "run4ever.cz", "run4u.cz", "run4you.cz", "runforever.cz", "sauto.cz", "sbazar.cz", "schema.seznam.cz", "sdn.szn.cz", "sdovolena.cz", "servis.pravo.cz", "servis.seznam.cz", "seznam-tv.cz", "seznam.net", "seznamzpravy.cz", "sklik.cz", "sletenky.cz", "slovo-roku.cz", "smartmaps.cz", "smoto.cz", "specialy-novinky.cz", "specialynovinky.cz", "sport.seznam.cz", "sprace.cz", "sprace.eu", "sreality.cz", "startup.seznam.cz", "streamtv.cz", "sz.cz", "szn-broken-dnssec.cz", "szn-dnssec.cz", "szn.cz", "tarif-extra.cz", "tarifextra.cz", "televizeseznam.cz", "tipy.firmy.cz", "tipy.kupi.cz", "tipy.mapy.cz", "tipy.medium.cz", "tipy.sauto.cz", "tipy.seznam.cz", "tipy.sklik.cz", "tipy.sreality.cz", "tipy.zbozi.cz", "tvseznam.cz", "voiceofprague.cz", "volnamista.cz", "zbozi.cz", "zlodeji-zivotu.cz", "zlodejizivotu.cz"]
-                }
-                </script>
-
-
-
-
-
-
-
-
-        </head>
-
-
-
-
-        <body data-dot-data='{"oauth": false}'>
-                <main>
-                        <a id="seznam" href="https://www.seznam.cz/"></a>
-
-                        <section id="login" hidden>
-                                <h1 data-locale="login.title" hidden></h1>
-                                <div class="oauth-placeholder"></div>
-
-                                <form class="login" hidden>
-                                        <div class="username">
-                                                <label class="magic">
-                                                        <input type="text" id="login-username" autocorrect="off" autocapitalize="off" autocomplete="username" placeholder=" " data-arrow-down="[type=password]" data-arrow-up="[type=submit]" />
-                                                        <span data-locale="login.username"></span>
-                                                </label>
-                                                <select name="domain">
-
-                                                        <option value="@seznam.cz" selected="selected" >@seznam.cz</option>
-
-                                                        <option value="@email.cz"  >@email.cz</option>
-
-                                                        <option value="@post.cz"  >@post.cz</option>
-
-                                                        <option value="@spoluzaci.cz"  >@spoluzaci.cz</option>
-
-                                                        <option value="@stream.cz"  >@stream.cz</option>
-
-                                                        <option value="" data-locale="login.phone"></option>
-                                                </select>
-                                        </div>
-
-                                        <label class="magic password">
-                                                <input type="password" id="login-password" placeholder=" " autocomplete="current-password" data-arrow-down="[type=submit]" data-arrow-up="#login-username" />
-                                                <span data-locale="login.password"></span>
-                                        </label>
-
-                                        <label class="magic code" hidden>
-                                                <input type="text" placeholder=" " autocomplete="one-time-code" data-arrow-down="[type=submit]" data-arrow-up="#login-username" />
-                                                <span data-locale="login.code"></span>
-                                        </label>
-
-                                        <a class="recover" href="#" data-locale="login.help"></a>
-
-                                        <button type="submit" data-locale="login.submit" data-arrow-down="#login-username" data-arrow-up="[type=password]" ></button>
-                                        <button type="button" data-locale="sms-login.button" class="sms-login secondary" hidden></button>
-
-                                        <a class="tertiary" href="https://registrace.seznam.cz/?service=ucet&amp;return_url=https%3A//email.seznam.cz/&amp;lang=cs" data-locale="login.register.link"></a>
-
-                                        <div class="sn-buttons">
-                                                <button type="button" name="google">
-                                                        <img src="/static/img/google-colors-24.svg" alt="Google" title="Google" />
-                                                </button>
-
-                                                <button type="button" name="azure">
-                                                        <img src="/static/img/azure.svg" alt="Microsoft" title="Microsoft" />
-                                                </button>
-
-                                                <button type="button" name="apple">
-                                                        <img src="/static/img/apple.svg" alt="Apple" title="Apple" />
-                                                </button>
-
-                                                <button type="button" name="facebook" hidden>
-                                                        <img src="/static/img/facebook.png" alt="Facebook" title="Facebook" />
-                                                </button>
-                                        </div>
-                                </form>
-
-                                <form class="logged" hidden></form>
-
-                                <form class="register" hidden>
-                                        <label class="magic">
-                                                <input type="text" placeholder=" " disabled />
-                                                <span data-locale="login.username"></span>
-                                        </label>
-
-                                        <p data-locale="login.register.description"></p>
-                                        <button type="submit" data-locale="login.register.submit"></button>
-                                        <a class="tertiary" href="https://login.szn.cz/?service=ucet&amp;return_url=https%3A//email.seznam.cz/&amp;lang=cs" data-locale="login.register.back"></a>
-                                </form>
-
-                                <form class="assign-password" hidden>
-                                        <p data-locale-unsafe="login.assign-password.pinDescription"></p>
-
-                                        <label class="magic pin">
-                                                <input type="text" name="pin" placeholder=" " autocomplete="one-time-code" />
-                                                <span data-locale="register.pin.placeholder"></span>
-                                                <!-- <a class="resend" href="#" data-locale="register.pin.resend"></a> -->
-                                        </label>
-
-                                        <p data-locale="login.assign-password.passwordDescription"></p>
-
-                                        <label class="magic">
-                                                <input type="password" placeholder=" " autocomplete="new-password" />
-                                                <span data-locale="register.password1"></span>
-                                        </label>
-
-                                        <label class="magic">
-                                                <input type="password" placeholder=" " />
-                                                <span data-locale="register.password2"></span>
-                                        </label>
-
-                                        <button type="submit" data-locale="login.submit"></button>
-                                </form>
-                        </section>
-
-                        <section id="licence" hidden>
-                                <form>
-                                        <h1 data-locale="licence.title"></h1>
-
-                                        <div class="placeholder"></div>
-                                        <img src="/static/img/licence.svg" />
-                                        <button type="submit" data-locale="licence.accept" data-purpose="accept"></button>
-<!--                    <a href="#" data-locale="licence.continue" data-purpose="continue"></a> -->
-                                </form>
-                        </section>
-
-                        <section id="sms-login" hidden>
-                                <form>
-                                        <div class="username">
-                                                <label class="magic">
-                                                        <input type="text" name="username" autocorrect="off" autocapitalize="off" autocomplete="username" placeholder=" " disabled />
-                                                        <span data-locale="login.username"></span>
-                                                </label>
-                                        </div>
-
-                                        <p class="description"></p>
-
-                                        <label class="phone">
-                                                <strong class="prefix"></strong>
-                                                <input name="phone" maxlength="3" type="text" autocomplete="off" placeholder="___" />
-                                                <input name="phone" maxlength="3" type="text" autocomplete="off" placeholder="___"  />
-                                                <input name="phone" maxlength="3" type="text" autocomplete="off" class="suffix" disabled />
-                                        </label>
-
-                                        <label class="magic pin">
-                                                <input name="pin" placeholder=" " type="text" maxlength="4" autocomplete="one-time-code" />
-                                                <span data-locale="recover.pin.pin"></span>
-                                                <a href="#" class="to-phone" data-locale="recover.pin.to-phone"></a>
-                                        </label>
-
-                                        <button type="submit" data-locale="login.continue"></button>
-                                </form>
-
-                                <a class="recover" href="#" data-locale="sms-login.recover"></a>
-                        </section>
-
-                        <section id="register" hidden>
-                                <h1 data-locale="register.title"></h1>
-
-                                <form class="intro">
-                                        <button type="button" class="official">
-                                                <img src="/static/img/illu-email-24.svg" />
-                                                <div>
-                                                        <strong data-locale="register.intro.official.title"></strong>
-                                                        <span data-locale="register.intro.official.subtitle"></span>
-                                                </div>
-                                        </button>
-                                        <button type="button" class="own">
-                                                <div>
-                                                        <strong data-locale="register.intro.own.title"></strong>
-                                                        <span data-locale="register.intro.own.subtitle"></span>
-                                                </div>
-                                        </button>
-                                        <button type="button" class="phone">
-                                                <div>
-                                                        <strong data-locale="register.intro.phone.title"></strong>
-                                                        <span data-locale="register.intro.phone.subtitle"></span>
-                                                </div>
-                                        </button>
-
-                                        <a class="tertiary" href="https://login.szn.cz/?service=ucet&amp;return_url=https%3A//email.seznam.cz/&amp;lang=cs" data-dot="to-login" data-locale="register.intro.login"></a>
-                                </form>
-
-                                <form class="main">
-                                        <p data-locale="register.descriptionOwn" class="description-own"></p>
-                                        <label class="magic">
-                                                <input type="text" id="register-username" placeholder=" " autocomplete="username" maxlength="121"
-
-                                                />
-                                                <span></span>
-                                        </label>
-
-                                        <label class="magic">
-                                                <input type="password" placeholder=" " autocomplete="new-password" />
-                                                <span data-locale="register.password1"></span>
-                                        </label>
-
-                                        <label class="magic">
-                                                <input type="password" placeholder=" " />
-                                                <span data-locale="register.password2"></span>
-                                        </label>
-
-                                        <label class="magic birthday">
-                                                <input type="date" name="birthday" placeholder="yyyy-mm-dd"
-
-                                                />
-                                                <span data-locale="register.birthday"></span>
-                                        </label>
-                                        <div class="explanation" data-locale="register.yearExplanation"></div>
-
-                                        <div class="gender-row">
-                                                <span data-locale="register.gender"></span>
-                                                <div class="radios">
-                                                        <label>
-                                                                <input type="radio" name="register.gender" value="Male"
-
-                                                                />
-                                                                <span data-locale="register.male"></span>
-                                                        </label>
-                                                        <label>
-                                                                <input type="radio" name="register.gender" value="Female"
-
-                                                                />
-                                                                <span data-locale="register.female"></span>
-                                                        </label>
-                                                        <label>
-                                                                <input type="radio" name="register.gender" value="Other"
-
-                                                                />
-                                                                <span data-locale="register.other"></span>
-                                                        </label>
-                                                </div>
-                                        </div>
-
-                                        <p class="agree" hidden>
-                                                <span data-locale="register.agree"></span>
-                                                <a class="licence-link" target="_blank">
-                                                        <span data-locale="register.licence"></span>.
-                                                </a>
-                                        </p>
-
-                                        <input type="text" name="name" hidden /><!-- jen pro registraci s predvyplnenym jmenem -->
-
-                                        <button type="submit"></button>
-
-                                        <a class="tertiary" href="https://o.seznam.cz/ochrana-udaju/seznam-registrace/" target="_blank" data-locale="register.phone.privacy"></a>
-
-                                        <div class="sn-buttons">
-                                                <button type="button" name="google">
-                                                        <img src="/static/img/google-colors-24.svg" alt="Google" title="Google" />
-                                                </button>
-
-                                                <button type="button" name="azure">
-                                                        <img src="/static/img/azure.svg" alt="Microsoft" title="Microsoft" />
-                                                </button>
-
-                                                <button type="button" name="apple">
-                                                        <img src="/static/img/apple.svg" alt="Apple" title="Apple" />
-                                                </button>
-
-                                                <button type="button" name="facebook" hidden>
-                                                        <img src="/static/img/facebook.png" alt="Facebook" title="Facebook" />
-                                                </button>
-                                        </div>
-                                </form>
-
-                                <form class="phone">
-                                        <label class="magic errorable">
-                                                <input type="text" placeholder=" " disabled name="username" />
-                                                <span data-locale="register.usernameOfficial"></span>
-                                        </label>
-
-                                        <label class="magic phone">
-                                                <input type="text" name="phone" placeholder=" " />
-                                                <span data-locale="register.phone.placeholder"></span>
-                                                <a class="edit" href="#" data-locale="register.phone.edit"></a>
-                                        </label>
-
-                                        <label class="magic pin">
-                                                <input type="text" name="pin" placeholder=" " autocomplete="one-time-code" />
-                                                <span data-locale="register.pin.placeholder"></span>
-                                                <a class="resend" href="#" data-locale="register.pin.resend"></a>
-                                        </label>
-
-                                        <p class="agree">
-                                                <span data-locale="register.agree"></span>
-                                                <a class="licence-link" target="_blank">
-                                                        <span data-locale="register.licence"></span>.
-                                                </a>
-                                        </p>
-
-                                        <button type="submit"></button>
-
-                                        <a class="tertiary" href="https://o.seznam.cz/ochrana-udaju/seznam-registrace/" target="_blank" data-locale="register.phone.privacy"></a>
-                                </form>
-
-                                <form class="phone-additional">
-                                        <label class="magic birthday">
-                                                <input type="date" name="birthday" placeholder="yyyy-mm-dd"/>
-                                                <span data-locale="register.birthday"></span>
-                                        </label>
-                                        <div class="explanation" data-locale="register.yearExplanation"></div>
-
-                                        <div class="gender-row">
-                                                <span data-locale="register.gender"></span>
-                                                <div class="radios">
-                                                        <label>
-                                                                <input type="radio" name="register.gender" value="Male" />
-                                                                <span data-locale="register.male"></span>
-                                                        </label>
-                                                        <label>
-                                                                <input type="radio" name="register.gender" value="Female" />
-                                                                <span data-locale="register.female"></span>
-                                                        </label>
-                                                        <label>
-                                                                <input type="radio" name="register.gender" value="Other" />
-                                                                <span data-locale="register.other"></span>
-                                                        </label>
-                                                </div>
-                                        </div>
-
-                                        <button type="submit" data-locale="register.continue"></button>
-
-                                        <a class="tertiary" href="https://o.seznam.cz/ochrana-udaju/seznam-registrace/" target="_blank" data-locale="register.phone.privacy"></a>
-                                </form>
-
-                                <form class="code">
-                                        <!--
-                                        register.sent.info
-                                        register.sent.resend
-                                        -->
-
-                                        <p></p>
-
-                                        <label class="magic code">
-                                                <input type="text" name="code" placeholder=" " autocomplete="one-time-code" />
-                                                <span data-locale="login.code"></span>
-                                        </label>
-
-                                        <p class="agree">
-                                                <span data-locale="register.agree"></span>
-                                                <a class="licence-link" target="_blank">
-                                                        <span data-locale="register.licence"></span>.
-                                                </a>
-                                        </p>
-
-                                        <button type="submit" data-locale="register.submit"></button>
-
-                                        <a class="tertiary" href="https://o.seznam.cz/ochrana-udaju/seznam-registrace/" target="_blank" data-locale="register.phone.privacy"></a>
-                                </form>
-
-                                <form class="login">
-                                        <p data-locale="register.login.description"></p>
-                                        <button type="submit" data-locale="register.login.submit"></button>
-                                </form>
-                        </section>
-
-                        <section id="assign-email" hidden>
-                                <form class="intro">
-                                        <h1></h1>
-                                        <p data-locale="assign-email.description"></p>
-
-                                        <button type="button" class="official">
-                                                <img src="/static/img/illu-email-24.svg" />
-                                                <div>
-                                                        <strong data-locale="assign-email.intro.official.title"></strong>
-                                                        <span data-locale="assign-email.intro.official.subtitle"></span>
-                                                </div>
-                                        </button>
-                                        <button type="button" class="own">
-                                                <div>
-                                                        <strong data-locale="assign-email.intro.own.title"></strong>
-                                                        <span data-locale="assign-email.intro.own.subtitle"></span>
-                                                </div>
-                                        </button>
-                                </form>
-
-                                <form class="main">
-                                        <h1></h1>
-                                        <p data-locale="assign-email.description"></p>
-
-                                        <label class="magic">
-                                                <input type="text" name="email" placeholder=" " autocomplete="username" />
-                                                <span></span>
-                                        </label>
-
-                                        <label class="magic">
-                                                <input type="password" placeholder=" " autocomplete="current-password" />
-                                                <span data-locale="assign-email.password"></span>
-                                        </label>
-
-                                        <label class="magic pin-anchor">
-                                                <input name="pin" type="text" placeholder=" " autocomplete="one-time-code" />
-                                                <span data-locale="secure-phone.phone.pin"></span>
-                                                <button type="button" class="resend" data-locale="secure-phone.phone.resend"></button>
-                                        </label>
-
-                                        <button type="submit" data-locale="assign-email.continue"></button>
-                                </form>
-
-                                <form class="sent">
-                                        <h1></h1>
-                                        <p></p>
-                                        <button type="submit" data-locale="assign-email.sent.submit"></button>
-                                </form>
-
-                                <form class="send-email">
-                                        <h1></h1>
-                                        <p></p>
-                                        <button type="submit" data-locale="assign-email.sendEmail.submit"></button>
-                                </form>
-
-                                <form class="done">
-                                        <img class="check" src="/static/img/illu-check-48.svg" />
-
-                                        <h1></h1>
-
-                                        <button type="submit" data-locale="assign-email.done.submit"></button>
-                                </form>
-                        </section>
-
-                        <section id="register-verification" hidden>
-                                <img class="check" src="/static/img/illu-check-48.svg" />
-
-                                <h1 data-locale="register.verification.title"></h1>
-
-                                <img class="verified" src="/static/img/verified.svg" />
-                                <h2 data-locale="register.verification.subtitle"></h2>
-                                <ul>
-                                        <li data-locale="register.verification.item1"></li>
-                                        <li data-locale="register.verification.item2"></li>
-                                        <li data-locale="register.verification.item3"></li>
-                                        <li data-locale="register.verification.item4"></li>
-                                </ul>
-
-                                <form>
-                                        <button type="button" class="bankid" data-locale="register.verification.submit-bankid"></button>
-                                        <button type="button" class="mojeid" data-locale="register.verification.submit-mojeid"></button>
-                                        <button hidden type="button" class="idcard" data-locale="register.verification.submit-idcard"></button>
-                                </form>
-
-                                <a href="#" class="tertiary skip" data-locale="register.verification.skip" data-dot="skip"></a>
-                                <p class="help"></p>
-                        </section>
-
-                        <section id="register-done" hidden>
-                                <img class="check" src="/static/img/illu-check-48.svg" />
-
-                                <h1></h1>
-
-                                <div class="vcard-placeholder"></div>
-
-                                <button type="submit"></button>
-                                <button type="button" data-locale="register.done.password" class="secondary"></button>
-                        </section>
-
-                        <section id="verification-password" hidden>
-                                <form>
-                                        <h1 data-locale="verification-password.title-"></h1>
-                                        <p data-locale="verification-password.description"></p>
-
-                                        <label class="magic errorable"> <!-- "errorable" kdyz neni validator -->
-                                                <input type="text" name="email" placeholder=" " value="" disabled />
-                                                <span data-locale="verification-password.email"></span>
-                                        </label>
-
-                                        <label class="magic">
-                                                <input type="password" placeholder=" " autocomplete="current-password" />
-                                                <span data-locale="verification-password.password"></span>
-                                        </label>
-
-                                        <button type="submit" data-locale="verification-password.continue"></button>
-                                </form>
-                        </section>
-
-                        <section id="reauth" hidden>
-                                <h1 data-locale="reauth.title"></h1>
-                                <p class="description"></p>
-
-                                <div class="placeholder"></div>
-
-                                <form>
-                                        <section data-mode="password" hidden>
-                                                <label class="magic">
-                                                        <input type="password" placeholder=" " autocomplete="current-password" />
-                                                        <span data-locale="reauth.password.input"></span>
-                                                </label>
-                                        </section>
-
-                                        <section data-mode="email" hidden>
-                                                <p></p>
-                                                <label class="magic">
-                                                        <input type="text" placeholder=" " name="code" />
-                                                        <span data-locale="reauth.email.code"></span>
-                                                </label>
-                                        </section>
-
-                                        <section data-mode="phone" hidden>
-                                                <p></p>
-                                                <label class="magic pin-anchor">
-                                                        <input name="pin" type="text" placeholder=" " autocomplete="one-time-code" />
-                                                        <span data-locale="secure-phone.phone.pin"></span>
-                                                        <button type="button" class="resend" data-locale="secure-phone.phone.resend"></button>
-                                                </label>
-                                        </section>
-
-                                        <button type="submit"></button>
-                                </form>
-                        </section>
-
-                        <section id="secure-phone" hidden>
-                                <h1></h1>
-                                <div class="vcard-placeholder"></div>
-
-                                <form>
-                                        <p>
-                                                <span data-locale="secure-phone.description"></span>
-                                                <br/>
-                                                <a href="https://o.seznam.cz/ochrana-udaju/seznam-registrace/" target="_blank" data-locale="secure-phone.privacy"></a>
-                                        </p>
-
-                                        <div class="pin-anchor">
-                                                <label class="magic">
-                                                        <input type="text" name="phone" placeholder=" " />
-                                                        <span data-locale="secure-phone.phone.label"></span>
-                                                </label>
-                                                <button type="button" class="edit" data-locale="secure-phone.phone.edit"></button>
-                                        </div>
-
-                                        <div class="pin-anchor">
-                                                <label class="magic">
-                                                        <input name="pin" type="text" placeholder=" " autocomplete="one-time-code" />
-                                                        <span data-locale="secure-phone.phone.pin"></span>
-                                                </label>
-                                                <button type="button" class="resend" data-locale="secure-phone.phone.resend"></button>
-                                        </div>
-
-                                        <div class="pin-anchor">
-                                                <label class="magic">
-                                                        <input type="password" placeholder=" " autocomplete="current-password" />
-                                                        <span data-locale="secure-phone.phone.password"></span>
-                                                </label>
-                                        </div>
-
-                                        <button type="submit"></button>
-                                </form>
-
-                                <div class="done">
-                                        <img src="/static/img/illu-check-48.svg" />
-                                        <h1 data-locale="secure-phone.phone.verified"></h1>
-                                        <button type="submit"></button>
-                                </div>
-
-                                <a class="tertiary skip" href="#" data-locale="secure-phone.phone.skip"></a>
-                        </section>
-
-                        <section id="veto" hidden>
-                                <h1 data-locale="veto.title"></h1>
-
-                                <p>
-                                        <span data-locale="veto.description1"></span>
-                                        <strong></strong>
-                                        <span data-locale="veto.description2"></span>
-                                        <strong style="white-space:nowrap"></strong>
-                                        <span data-locale="veto.description3"></span>.
-                                </p>
-
-                                <form>
-                                        <input name="ticket" value="" type="hidden" />
-
-                                        <label class="magic">
-                                                <input type="password" name="old_password" placeholder=" " />
-                                                <span data-locale="veto.password.old"></span>
-                                        </label>
-
-                                        <label class="magic">
-                                                <input type="password" name="new_password" placeholder=" " />
-                                                <span data-locale="veto.password.new1"></span>
-                                        </label>
-
-                                        <label class="magic">
-                                                <input type="password" name="repeated_password" placeholder=" " />
-                                                <span data-locale="veto.password.new2"></span>
-                                        </label>
-
-                                        <button type="submit" data-locale="veto.submit"></button>
-                                </form>
-                        </section>
-
-                        <section id="veto-pin" hidden>
-                                <h1 data-locale="veto-pin.title"></h1>
-
-                                <form>
-                                        <input name="ticket" value="" type="hidden" />
-
-                                        <label class="magic">
-                                                <input type="text" name="email" placeholder=" " />
-                                                <span data-locale="veto-pin.email"></span>
-                                        </label>
-
-                                        <label class="magic">
-                                                <input type="text" name="pin" placeholder=" " value="" autocomplete="one-time-code" />
-                                                <span data-locale="veto-pin.pin"></span>
-                                        </label>
-
-                                        <button type="submit" data-locale="veto-pin.submit"></button>
-                                </form>
-                        </section>
-
-                        <section id="veto-done" hidden>
-                                <h1 data-locale="veto.done.title"></h1>
-
-                                <p data-locale="veto.done.description"></p>
-                <ul>
-                    <li data-locale="veto.done.check_phone"></li>
-                    <li data-locale="veto.done.check_email"></li>
-                    <li data-locale="veto.done.check_app_psw" hidden></li>
-                </ul>
-
-                <a class="tertiary" data-locale="veto.done.link" href="https://ucet.seznam.cz/secure"></a>
-                        </section>
-
-                        <section id="oauth-error" hidden>
-                                <h1 data-locale="login.title"></h1>
-                                <h2></h2>
-                                <p></p>
-                        </section>
-
-                        <section id="tfa" hidden>
-                                <h1></h1>
-
-                                <div class="vcard-placeholder"></div>
-
-                                <section class="sbrowser">
-                                        <div class="wave"><b></b><b></b><b></b></div>
-                                        <div class="video"></div>
-                                        <p data-locale="tfa.waiting.description"></p>
-                                        <button class="tertiary" data-action="help" data-locale="tfa.help.title"></button>
-                                </section>
-
-                                <section class="pin">
-                                        <form data-action="pin">
-                                                <label class="magic">
-                                                        <input type="text" name="pin" placeholder=" " autocomplete="one-time-code" />
-                                                        <span data-locale="tfa.pin.placeholder"></span>
-                                                </label>
-                                                <button type="submit" data-locale="tfa.pin.submit"></button>
-                                                <a class="tertiary" href="#" data-action="help" data-locale="tfa.help.title"></a>
-                                        </form>
-                                </section>
-
-                <section class="totp">
-                                        <form data-action="totp">
-                                                <label class="magic">
-                                                        <input type="text" name="totp" placeholder=" " autocomplete="one-time-code" />
-                                                        <span data-locale="tfa.totp.code"></span>
-                                                </label>
-                                                <button type="submit" data-locale="tfa.totp.submit"></button>
-                                                <a class="tertiary" href="#" data-action="help" data-locale="tfa.help.title"></a>
-                                        </form>
-                                </section>
-
-                                <section class="fido">
-                                        <form data-action="fido">
-                                                <a class="tertiary" href="#" data-action="help" data-locale="tfa.help.title"></a>
-                                        </form>
-                                </section>
-
-                                <section class="remember">
-                                        <p data-locale="tfa.remember.description"></p>
-
-                    <button type="button" class="secondary" data-action="remember" data-locale="tfa.remember.yes" data-arrow-down="[data-action=continue]" data-arrow-up="[data-action=continue]"></button>
-                                        <button type="button" class="secondary" data-action="continue" data-locale="tfa.remember.no" data-arrow-down="[data-action=remember]" data-arrow-up="[data-action=remember]"></button>
-                                </section>
-
-                                <ul class="tfa-help">
-                    <h2 data-locale="tfa.help.title"></h2>
-                    <li class="push">
-                                                <a href="#" data-action="push">
-                                                        <img src="/static/img/tfa/push2.svg" />
-                                                        <span data-locale="tfa.help.push"></span>
-                                                </a>
-                                        </li>
-                    <li class="sbrowser">
-                                                <a href="#" data-action="sbrowser">
-                                                        <img src="/static/img/tfa/sbrowser.svg" />
-                                                        <span data-locale="tfa.help.sbrowser"></span>
-                                                </a>
-                                        </li>
-                    <li class="totp">
-                                                <a href="#" data-action="totp">
-                                                        <img src="/static/img/tfa/totp.svg" />
-                                                        <span data-locale="tfa.help.totp"></span>
-                                                </a>
-                                        </li>
-                                        <li class="fido">
-                                                <a href="#" data-action="fido">
-                                                        <img src="/static/img/tfa/fido.svg" />
-                                                        <span data-locale="tfa.help.fido"></span>
-                                                </a>
-                                        </li>
-                                        <li>
-                                                <a href="https://o-seznam.cz/napoveda/ucet/dvoufazove-overeni/" target="_blank">
-                                                        <img src="/static/img/tfa/help2.svg" />
-                                                        <span data-locale="tfa.help.help"></span>
-                                                </a>
-                                        </li>
-                                        <li class="sms">
-                                                <a href="#" data-action="sms">
-                                                        <img src="/static/img/tfa/sms2.svg" />
-                                                        <span data-locale="tfa.help.sms"></span>
-                                                </a>
-                                        </li>
-                    <span class="close" data-locale="tfa.help.close"></span>
-                                </ul>
-                        </section>
-
-                        <section id="oauth" hidden>
-                                <h1></h1>
-                                <div class="oauth-placeholder"></div>
-
-                                <div class="vcard-placeholder"></div>
-
-                                <p></p>
-                                <ul></ul>
-                                <p></p>
-
-                                <form>
-                                        <button type="submit" data-locale="oauth.submit"></button>
-                                </form>
-                        </section>
-
-                        <section id="refresh-secure" hidden>
-                                <h1 data-locale="refresh-secure.title"></h1>
-
-                                <div class="vcard-placeholder"></div>
-                                <p></p>
-
-                                <div class="content"></div>
-
-                                <button type="submit" data-locale="refresh-secure.submit"></button>
-                        </section>
-
-                        <section id="unblocker" hidden>
-                                <form class="phone">
-                                        <h1 data-locale="unblocker.title"></h1>
-                                        <p data-locale="unblocker.description"></p>
-
-                                        <label class="magic phone">
-                                                <input type="text" name="phone" placeholder=" " />
-                                                <span data-locale="secure-phone.phone.label"></span>
-<!--                                                    <button type="button" class="edit" data-locale="secure-phone.phone.edit"></button> -->
-                                        </label>
-
-                                        <button type="submit" data-locale="secure-phone.phone.send"></button>
-                                </form>
-
-                                <form class="sms-loop"></form>
-
-                                <form class="password">
-                                        <p class="sent"></p>
-                                        <label class="magic pin">
-                                                <input name="pin" type="text" placeholder=" " autocomplete="pan-cau" />
-                                                <span data-locale="secure-phone.phone.pin"></span>
-                                                <button type="button" class="resend" data-locale="secure-phone.phone.resend"></button>
-                                        </label>
-
-                                        <p class="phone-explain"></p>
-
-                                        <p data-locale="unblocker.password"></p>
-
-                                        <label class="magic">
-                                                <input type="password" autocomplete="current-password" placeholder=" "/>
-                                                <span data-locale="password.current"></span>
-                                        </label>
-
-                                        <label class="magic">
-                                                <input type="password" autocomplete="new-password" placeholder=" "/>
-                                                <span data-locale="password.new"></span>
-                                        </label>
-
-                                        <label class="magic">
-                                                <input type="password" placeholder=" "/>
-                                                <span data-locale="password.repeat"></span>
-                                        </label>
-
-                                        <button type="submit" data-locale="password.submit"></button>
-                                </form>
-
-                                <form class="done">
-                                        <img class="check" src="/static/img/illu-check-48.svg" />
-                                        <h1 data-locale="unblocker.done.title"></h1>
-
-                                        <p></p>
-
-                                        <button type="submit" data-locale="unblocker.done.submit"></button>
-                                        <button type="button" class="secondary" data-locale="unblocker.done.settings"></button>
-                                </form>
-                        </section>
-
-                        <section id="recover" hidden>
-                                <h1></h1>
-
-                                <form id="recover-intro">
-                                        <label class="magic">
-                                                <input type="text" id="recover-username" name="youremail" placeholder=" " />
-                                                <span data-locale="recover.youremail"></span>
-                                        </label>
-                                        <button type="submit" data-locale="recover.continue"></button>
-                                </form>
-
-                <form id="recover-intro-disabled">
-                    <p data-locale="recover.disabled.description"></p>
-                                        <button type="submit" data-locale="recover.disabled.submit"></button>
-                </form>
-
-                                <form id="recover-intro-disabled-managed">
-                    <p data-locale="recover.disabled.descriptionManaged"></p>
-                                        <button type="submit" data-locale="alert.ok"></button>
-                </form>
-
-                                <div class="vcard-placeholder"></div>
-
-                                <div id="recover-options">
-                                        <ul class="options"></ul>
-                    <h3 data-locale="recover.veto.suspicion" hidden></h3>
-                                        <ul class="veto" hidden></ul>
-                                </div>
-
-                <form id="veto-email">
-                    <p></p>
-                                        <button type="submit" data-locale="recover.email.submit"></button>
-                </form>
-
-                <form id="veto-email-sent">
-                    <p></p>
-                                        <button type="submit" data-locale="recover.mail_sent.submit"></button>
-                </form>
-
-                <form id="veto-phone">
-                    <p></p>
-
-                    <label>
-                                                <strong></strong>
-                                                <input name="phone" maxlength="3" type="text" placeholder="___" autocomplete="off" />
-                                                <input name="phone" maxlength="3" type="text" placeholder="___" autocomplete="off" />
-                                                <input class="suffix" name="phone" maxlength="3" type="text" autocomplete="off" disabled />
-                                        </label>
-                    <a href="#" data-locale="recover.veto.to-pin"></a>
-                                        <button type="submit" data-locale="recover.continue"></button>
-                </form>
-
-                <form id="veto-phone-sent">
-                    <p></p>
-                                        <button type="submit" data-locale="recover.continue"></button>
-                </form>
-
-                                <form id="recover-bankid">
-                                        <p data-locale="recover.bankid.description"></p>
-                                        <button type="submit" data-locale="recover.continue"></button>
-                                </form>
-
-                                <form id="recover-mojeid">
-                                        <p data-locale="recover.mojeid.description"></p>
-                                        <button type="submit" data-locale="recover.continue"></button>
-                                </form>
-
-                                <form id="recover-google">
-                                        <p data-locale="recover.google.description"></p>
-                                        <button type="submit" data-locale="recover.google.submit"></button>
-                                </form>
-
-                                <form id="recover-azure">
-                                        <p data-locale="recover.azure.description"></p>
-                                        <button type="submit" data-locale="recover.azure.submit"></button>
-                                </form>
-
-                                <form id="recover-apple">
-                                        <p data-locale="recover.apple.description"></p>
-                                        <button type="submit" data-locale="recover.apple.submit"></button>
-                                </form>
-
-                                <form id="recover-facebook">
-                                        <p data-locale="recover.facebook.description"></p>
-                                        <button type="submit" data-locale="recover.facebook.submit"></button>
-                                </form>
-
-                                <form id="recover-email">
-                                        <p></p>
-                                        <button type="submit" data-locale="recover.email.submit"></button>
-                                </form>
-
-                                <form id="recover-phone" action="#recover-phone">
-                                        <p></p>
-
-                                        <label>
-                                                <strong></strong>
-                                                <input name="phone" maxlength="3" type="text" placeholder="___" autocomplete="off" />
-                                                <input name="phone" maxlength="3" type="text" placeholder="___" autocomplete="off" />
-                                                <input class="suffix" name="phone" maxlength="3" type="text" autocomplete="off" disabled />
-                                        </label>
-                                        <a href="#" data-locale="recover.phone.to-pin"></a>
-                                        <button type="submit" data-locale="recover.continue"></button>
-                                </form>
-
-                                <form id="recover-pin">
-                                        <p></p>
-
-                                        <label class="magic">
-                                                <input name="pin" placeholder=" " type="text" maxlength="4" autocomplete="one-time-code" />
-                                                <span data-locale="recover.pin.pin"></span>
-                                                <a href="#" data-locale="recover.pin.to-phone"></a>
-                                        </label>
-
-                                        <button type="submit" data-locale="recover.verify"></button>
-                                </form>
-
-                                <form id="recover-password">
-                                        <label class="magic">
-                                                <input type="password" placeholder=" " autocomplete="new-password" />
-                                                <span data-locale="register.password1"></span>
-                                        </label>
-                                        <label class="magic">
-                                                <input type="password" placeholder=" " />
-                                                <span data-locale="register.password2"></span>
-                                        </label>
-
-                                        <label hidden>
-                                                <input type="checkbox" name="save_email" />
-                                                <span></span>
-                                        </label>
-
-                                        <button type="submit" data-locale="recover.password.submit"></button>
-                                        <button type="button" class="tertiary" data-locale="recover.login"></button>
-                                </form>
-
-                                <form id="recover-bad-ticket">
-                                        <h2 data-locale="recover.ticket.error_title"></h2>
-                                        <p data-locale="recover.ticket.bad_or_old"></p>
-                                </form>
-
-                                <form id="recover-mismatched-email">
-                                        <p data-locale="recover.mismatch.text"></p>
-                                        <button type="submit" data-locale="alert.ok"></button>
-                                </form>
-
-                                <form id="recover-req-sent">
-                                        <p data-locale="recover.req_sent.description"></p>
-                                </form>
-
-                                <form id="recover-mail-sent">
-                                        <p></p>
-                                        <button type="submit" data-locale="recover.mail_sent.submit"></button>
-                                </form>
-
-                                <form id="recover-done">
-                                        <img class="check" src="/static/img/illu-check-48.svg" />
-                                        <h1 data-locale="recover.done.title"></h1>
-                    <p data-locale="recover.done.tfa_text"></p>
-                                        <button type="submit" data-locale="recover.done.submit"></button>
-                                </form>
-
-                                <button type="button" class="tertiary back" data-locale="recover.back"></button>
-                <a class="tertiary" href="https://o-seznam.cz/napoveda/ucet/zapomenute-heslo/jak-na-to/" data-locale="recover.helpdesk" target="_blank"></a>
-                        </section>
-
-                        <section id="gdpr-unblock" hidden>
-                                <h1 data-locale="blockedGdpr.title"></h1>
-
-                                <div class="vCard-placeholder"></div>
-                                <h2 data-locale="blockedGdpr.infoTitle"></h2>
-                                <p data-locale="blockedGdpr.infoText"></p>
-
-                                <label class="magic">
-                                        <input type="password" placeholder=" " name="pwd" autocomplete="current-password" />
-                                        <span data-locale="blockedGdpr.password"></span>
-                                </label>
-
-                                <label>
-                                        <input type="checkbox" name="notify" />
-                                        <span data-locale="blockedGdpr.notify"></span>
-                                </label>
-
-                                <button type="submit" data-locale="blockedGdpr.continue"></button>
-
-                                <a class="tertiary" href="https://login.szn.cz/?service=ucet&amp;return_url=https%3A//email.seznam.cz/&amp;lang=cs" data-locale="blockedGdpr.relogin"></a>
-                        </section>
-
-                        <section id="help" hidden>
-                                <form>
-                                        <p>
-                                                <label>
-                                                        URL:
-                                                        <select>
-                                                                <option>[pick one below]</option>
-                                                        </select>
-                                                </label>
-                                        </p>
-                                        <p class="inputs"></p>
-                                        <p><button type="submit">Help!</button></p>
-                                </form>
-                                <pre></pre>
-                        </section>
-
-                        <div hidden>
-                                <section class="widget-captcha">
-                                        <img />
-                                        <a href="#" class="play" data-locale="register.captcha.play"></a>
-                                        <br/>
-                                        <a href="#" class="new" data-locale="register.captcha.new"></a>
-                                        <label class="magic">
-                                                <input type="text" placeholder=" " />
-                                                <span data-locale="register.captcha.title"></span>
-                                        </label>
-                                </section>
-
-                                <form class="widget-password-change">
-                                        <h1 data-locale="password.title"></h1>
-                                        <p></p>
-
-                                        <label class="magic">
-                                                <input type="password" autocomplete="current-password" placeholder=" "/>
-                                                <span data-locale="password.current"></span>
-                                        </label>
-
-                                        <label class="magic">
-                                                <input type="password" autocomplete="new-password" placeholder=" "/>
-                                                <span data-locale="password.new"></span>
-                                        </label>
-
-                                        <label class="magic">
-                                                <input type="password" placeholder=" "/>
-                                                <span data-locale="password.repeat"></span>
-                                        </label>
-
-                                        <button type="submit" data-locale="password.submit"></button>
-
-                                        <a class="continue tertiary" href="#" data-locale="password.continue"></a>
-                                </form>
-
-                                <div class="widget-vcard">
-                                        <img alt="Seznam avatar" class="avatar" />
-                                        <div class="user">
-                                                <div class="name"></div>
-                                                <div class="email"></div>
-                                        </div>
-                                </div>
-
-                                <div class="widget-sms-loop">
-                                        <p class="instructions"></p>
-                                        <img class="loading" width="48" height="48" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAEUSURBVHgB7dZdDgExFAXgg/BsCbUDHj1hB5bCCmyBlbAD3iRI2AF24F383NKRO8nE/Ei04nyJaBsdTm+nAyAiIqI/tQXqa6CLD5ThyRIwF8lQAuYbYG/7KMBbgNpz5Y3rmqoEWQFN5OQtgHzxTN4OasjI2DRvJbwFaAGnM9CT5k4NPyph742s1/EWwGpLBSoJIa7AKOs1SgjA0q081PaR6jTa8S2WyGsFIu6HDvWYBBpkmRtEBSKbZxW6rnuS7dWw98q7OUFUQJmodl22UT9tQlABZMUXUCsu/U7anKACuO3yOpFuGR5soW0h66jaJu3DwQW4xY/O1AdaiBXQp84Bv0iO07G8pkX+3BERERERERERfccdn5cv41vhbZsAAAAASUVORK5CYII=" />
-                                        <p class="waiting" data-locale="sms-loop.waiting"></p>
-                                        <a class="tertiary" href="#" data-locale="sms-loop.cancel"></a>
-                                </div>
-                        </div>
-                </main>
-
-                <footer>
-                        <p>Copyright &copy; 1996&ndash;<span id="year">2024</span> Seznam.cz, a.s.</p>
-                        <p class="help"><a target="_blank" href="https://o-seznam.cz/napoveda/ucet/" data-locale="footer.help"></a></p>
-                        <select id="language">
-                                <option value="cs">🇨🇿&nbsp;&nbsp;&nbsp;Čeština</option>
-                                <option value="sk">🇸🇰&nbsp;&nbsp;&nbsp;Slovenština</option>
-                                <option value="en">🇬🇧&nbsp;&nbsp;&nbsp;English</option>
-                                <option value="de">🇩🇪&nbsp;&nbsp;&nbsp;Deutsch</option>
-                                <option value="pl">🇵🇱&nbsp;&nbsp;&nbsp;Polski</option>
-                                <option value="uk">🇺🇦&nbsp;&nbsp;&nbsp;Українська</option>
-                                <option value="ru">🇷🇺&nbsp;&nbsp;&nbsp;Pу́сский язы́к</option>
-                        </select>
-                </footer>
-
-                <script src="/static/js/locale/cs.js?3.2.227-98d348fd9155165cb6530417a1313c85b4ffef80"></script>
-                <script src="/static/js/app.js?3.2.227-98d348fd9155165cb6530417a1313c85b4ffef80"></script>
-
-                <div style="display:none"><!--preload-->
-                        <img src="../static/img/check.svg" />
-                        <img src="../static/img/uncheck.svg" />
-                </div>
-        </body>
+	<head>
+		<title>Naše MŠ - škola blízká rodičům</title>
+		<link rel='stylesheet' type='text/css' href='https://nasems.cz/css/index.css'>
+		<link rel='shortcut icon' href='https://nasems.cz/favicon.ico'>
+		<meta name='viewport' content='width=device-width, initial-scale=1'>
+	</head>
+	<body>
+		<div class='header'>
+			<div class='left'>
+				<div class='logo'></div>
+					<div class='aplikace'>
+						<div class='row'>NAŠE MŠ</div>
+						<div class='row'>škola blízká rodičům</div>
+					</div>
+			</div>
+			<div class='right'>
+				<div class='app_buttons'>
+					<div class='app_button google_play'><a href='https://play.google.com/store/apps/details?id=sms.nasems'><img src='/images/google-play-badge.png' alt='google_play_odkaz'></a></div>
+					<div class='app_button app_store'><a href='https://apps.apple.com/cz/app/na%C5%A1e-m%C5%A1/id1435115785'><img src='/images/app-store-badge.png' alt='app_store_odkaz'></a></div>
+				</div>
+			</div>
+		</div>
+		<div class='content prihlaseni'>
+			<div class='part part_1'>
+				<div class='prihlaseni_udaje'>
+					<div class='icon'></div>
+					<div class='prihlaseni_nadpis'>KDE ZÍSKÁM<br/>PŘÍSTUPOVÉ ÚDAJE?</div>
+					<div class='desc'>
+						<div class='row'>Mateřská škola Vám vygeneruje přístupové údaje. <span class='colored'>Přihlašovací jméno</span> obdržíte od mateřské školy vytištěné <span class='colored'>na papírku</span> nebo v <span class='colored'>pdf souboru do emailu</span>. </div>
+						<div class='row'>V případě ztráty <span class='colored'>přihlašovacího jména</span>, kontaktujte přímo mateřskou školu. <span class='colored'>Heslo</span> obdržíte vždy <span class='colored'>SMS zprávou</span>.</div>
+					</div>
+				</div>
+				<div class='wrapper_prihlaseni_box'>
+					<div class='icon'></div>
+					<div class='prihlaseni_box'>
+						<form action='https://nasems.cz/' method='post'>
+							<div class='nadpis'>PŘIHLÁŠENÍ</div>
+							<div class='center'><input type='text' class='login' name='login' value='' /></div>
+							<div class='center'><input type='password' class='pw' name='password' value='' /></div>
+							<div class='center'><input type='submit' class='prihlasit_se' value='Přihlásit se' /></div>
+						</form>
+						<div class='obnoveni_hesla'>Zapomněli jste Vaše heslo? Obnovte si ho <a href='https://nasems.cz/obnoveni-hesla'>zde</a>.</div>
+					</div>
+				</div>
+				<div class='prihlaseni_app'>
+					<div class='icon'></div>
+					<div class='prihlaseni_nadpis'>KAM SE MÁM PŘIHLÁSIT?<br/>JAK TO MÁM UDĚLAT?</div>
+					<div class='desc'>
+						<div class='row'>Můžete si <span class='colored'>stáhnout aplikaci</span> přímo do Vašeho <span class='colored'>mobilního telefonu</span> nebo se přihlašujte pomocí těchto <span class='colored'>webových stránek</span>.</div>
+						<div class='row'>Následně zadejte Vaše přihlašovací údaje a používejte aplikaci.</div>
+					</div>
+				</div>
+			</div>
+			<div class='part part_2'>
+				<div class='items'>
+					<div class='item problem_heslo'>
+						<div class='icon'></div>
+						<div class='item_nadpis'>ZAPOMNĚLI JSTE VAŠE<br/><b>HESLO?</b></div>
+						<div class='item_desc'>
+							<div class='row bold colored'>Klikněte na tlačítko níže a jednoduše si Vaše heslo obnovte.</div>
+							<div class='row bold'><form action='https://nasems.cz/obnoveni-hesla' method='post'><input class='dark_button' type='submit' value='OBNOVIT HESLO' /></form></div>
+						</div>
+					</div>
+					<div class='item problem_login'>
+						<div class='icon'></div>
+						<div class='item_nadpis'>NEMÁTE / NEOBDRŽELI JSTE<br/><b>PŘIHLAŠOVACÍ JMÉNO?</b></div>
+						<div class='item_desc'>
+							<div class='row bold colored'>Přihlašovací jméno obdržíte od mateřské školy buď vytištěné na papírku, nebo v pdf souboru do emailu.</div>
+							<div class='row'>Pokud jste lísteček nebo email neobdrželi, požádejte o sdělení přihlašovacího jména Vaši mateřskou školu.</div>
+						</div>
+					</div>
+					<div class='item problem_vice_deti'>
+						<div class='icon'></div>
+						<div class='item_nadpis'>MÁTE V MŠ SOUROZENCE<br/><b>A POTŘEBUJETE PORADIT?</b></div>
+						<div class='item_desc'>
+							<div class='row bold colored'>V nastavení klikněte na ikonu sloučit účty a zadejte přihlašovací údaje druhého účtu.</div>
+							<div class='row bold'>Následně dojde k načtení dítěte ze zadaného účtu a budete tak moci spravovat záležitosti sourozenců z jednoho účtu.</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class='part part_3'>
+				<div class='delimeter'>O aplikaci NAŠE MŠ</div>
+				<div class='podnadpis'><span class='colored'>NAŠE MŠ JE APLIKACE, KTERÁ RODIČŮM A MATEŘSKÉ ŠKOLE USNADNÍ VZÁJEMNOU KOMUNIKACI.</span> DÍKY APLIKACI MÁTE NEUSTÁLE PŘI RUCE VEŠKERÉ AKTUALITY Z DĚNÍ V MATEŘSKÉ ŠKOLE, MŮŽTE VAŠE DÍTĚ PŘIHLÁSIT NA VYBRANÝ KROUŽEK NEBO SE IHNED DOZVÍTE O AKCÍCH KONANÝCH V NEJBLIŽŠÍ DOBĚ.</div>
+				<div class='moduly'>
+					<div class='modul nastenka'>
+						<div class='modul_icon'></div>
+						<div class='modul_nazev'>Nástěnka</div>
+						<div class='modul_popis'>aktuality a novinky</div>
+					</div>
+					<div class='modul omluvenky'>
+						<div class='modul_icon'></div>
+						<div class='modul_nazev'>Omluvenky</div>
+						<div class='modul_popis'>rychlé a snadné omlouvání</div>
+					</div>
+					<div class='modul krouzky'>
+						<div class='modul_icon'></div>
+						<div class='modul_nazev'>Kroužky</div>
+						<div class='modul_popis'>přihlašování dětí na kroužky</div>
+					</div>
+					<div class='modul jidelnicek'>
+						<div class='modul_icon'></div>
+						<div class='modul_nazev'>Jídelníček</div>
+						<div class='modul_popis'>přehledný jídelníček s alergeny</div>
+					</div>
+					<div class='modul fotogalerie'>
+						<div class='modul_icon'></div>
+						<div class='modul_nazev'>Fotogalerie</div>
+						<div class='modul_popis'>fotografie z akcí a výletů</div>
+					</div>
+					<div class='modul akce'>
+						<div class='modul_icon'></div>
+						<div class='modul_nazev'>Akce v MŠ</div>
+						<div class='modul_popis'>seznam konaných akcí</div>
+					</div>
+					<div class='modul dotazniky'>
+						<div class='modul_icon'></div>
+						<div class='modul_nazev'>Dotazníky</div>
+						<div class='modul_popis'>zpětná vazba od rodičů</div>
+					</div>
+					<div class='modul zpravy'>
+						<div class='modul_icon'></div>
+						<div class='modul_nazev'>Zprávy</div>
+						<div class='modul_popis'>komunikujte s mateřskou školou</div>
+					</div>
+				</div>
+				<div class='funkce funkce_1'>
+					<div class='left'>
+						<div class='nadpis'>ZAJÍMÁ VÁS, NA JAKÉ AKCE SE MOHOU VAŠE DĚTI V MATEŘSKÉ ŠKOLE TĚŠIT?</div>
+						<div class='desc'>Podívejte se do mobilní aplikace NAŠE MŠ a nebo se na webu přihlašte do Vašeho účtu, kde naleznete seznam plánovaných akcí a výletů s detailním popisem, co vše mají mít děti sebou nachystáno. Kromě veškerých informacíh o AKCÍ V MŠ, Vám je dále k dispozici vždy aktuální JÍDELNÍČEK s alergeny a také možnost přihlásit děti přes aplikaci na KROUŽKY. Ve FOTOGALERII se poté podíváte, jak si děti užily výlet a nebo jak vypadal jejich den v mateřské škole.</div>
+					</div>
+					<div class='right'></div>
+				</div>
+				<div class='funkce funkce_2'>
+					<div class='left'></div>
+					<div class='right'>
+						<div class='nadpis'>NEJVÍCE VÁM APLIKACE NAŠE MŠ USNADNÍ A POMŮŽE S OMLOUVÁNÍM VAŠICH DĚTÍ</div>
+						<div class='desc'>Během pár vteřin vytvoříte OMLUVENKU a odešlete ji mateřské škole. Pouze vyplníte datum a napíšete důvod nepřítomnosti. Poté jen kliknete na tlačítko OMLUVIT a omluvenka se v okamžiku objeví v účtu mateřské školy. Již nemusíte hledat email mateřské školy nebo telefonovat do třídy. Jako rodič máte jistotu, že mateřská škola omluvenku vždy obdrží a mateřská škola má na oplátku velmi přehledný seznam omluvených dětí.</div>
+					</div>
+				</div>
+				<div class='funkce funkce_3'>
+					<div class='left'>
+						<div class='nadpis'>TOTO VŠE FUNGUJE NA ZÁKLADĚ PROPOJENÍ ÚČTU RODIČE S ÚČTEM MATEŘSKÉ ŠKOLY</div>
+						<div class='desc'>K tomuto propojení dochází ve chvíli, kdy mateřská škola vytvoří pro rodiče jeho účet v aplikaci NAŠE MŠ a rodiči předá přihlašovací údaje. Ihned po prvním přihlášení může rodič začít využívat všech funkcí, které si mateřská škola v aplikaci zaktivní.</div>
+					</div>
+					<div class='right'></div>
+				</div>
+			</div>
+			<div class='part part_4'>
+				<div class='delimeter'>Ochrana osobních údajů</div>
+				<div class='podnadpis'>SAMOZŘEJMĚ VÍME, ŽE POKUD PRODUKT PRACUJE V INTERNETOVÉM PROSTŘEDÍ, <span class='colored'>JE DŮLEŽITÉ, ABY BYL DŮKLADNĚ ZABEZPEČEN.</span></div>
+				<div class='funkce'>
+					<div class='left'></div>
+					<div class='right'>
+						<p>Veškerá data, která jsou v programu uložena, jsou ukládána v zašifrované podobě a zabezpečena na úrovni internetového bankovnictví. Veškerá komunikace je šifrována protokolem HTTPS. Data v programu jsou majetkem mateřské školy a jsou přímo ukládána na její účet.</p>
+						<p>Váš email či telefon, který slouží např. při obnově hesla, bude po skončení využívání aplikace odstraněn a bude zapomenut. Data jsou uložena v souladu s GDPR v České republice. Nemusíte se tedy bát jejich zneužití.</p>
+					</div>
+				</div>
+			</div>
+			<div class='part part_5'>
+				<div class='nadpis'>STÁHNĚTE SI MOBILNÍ APLIKACI:</div>
+				<div class='app_buttons'>
+					<div class='app_button google_play'><a href='https://play.google.com/store/apps/details?id=sms.nasems'><img src='/images/google-play-badge.png' alt='google_play_odkaz'></a></div>
+					<div class='app_button app_store'><a href='https://apps.apple.com/cz/app/na%C5%A1e-m%C5%A1/id1435115785'><img src='/images/app-store-badge.png' alt='app_store_odkaz'></a></div>
+				</div>
+			</div>
+		</div>
+		<div class='footer'>
+			<div class='left'>
+				<a href='https://nasems.cz/dokument-podminky-uziti' target='_blank' style='color: gray;'>Podmínky užívání aplikace</a> | <a href='https://nasems.cz/dokument-zasady-ochrany-osobnich-udaju' target='_blank'>Zásady ochrany osobních údajů</a>
+			</div>
+			<div class='right'>© 2017 Naše MŠ Software, s. r. o. | All rights reserved</div>
+		</div>
+	</body>
 </html>

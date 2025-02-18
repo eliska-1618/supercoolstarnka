@@ -1,0 +1,143 @@
+.uk-section-default {
+  background-image: url("images/bg-page.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.tm-login-form {
+    width: 420px;
+    padding: 85px 20px 30px;
+    padding: 10px 20px 30px;
+    border-radius: 16px;
+    background-color: #fcfcfc;
+    background-image: url("images/login-form-logo.svg");
+    background-repeat: no-repeat;
+    background-position: top 26px center;
+    box-shadow: 0px 12px 16px rgba(0, 0, 0, 0.2);
+  }
+  @media (min-width: 480px) {
+    .tm-login-form {
+      padding: 110px 40px 40px;
+      padding: 20px 40px 40px;
+      background-position: top 36px center;
+    }
+  }
+  .tm-login-form > a {
+    display: block;
+    width: 220px;
+    height: 65px;
+    margin: 0 auto 10px;
+  }
+  @media (min-width: 480px) {
+    .tm-login-form > a {
+      margin-bottom: 25px;
+    }
+  }
+  .tm-login-form .tm-login-error {
+    margin-bottom: 20px;
+    padding: 9px 16px;
+    border-radius: 10px;
+    color: #a80c16;
+    background: #f7e3e3;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 22px;
+    text-align: center;
+    letter-spacing: 0.2px;
+  }
+  .tm-login-form .uk-form-icon {
+    background-image: url("images/login-form-icon-eye-green.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  .tm-login-form .uk-form-icon svg {
+    display: none;
+  }
+  .tm-login-form input[type='text'] + .uk-form-icon {
+    background-image: url("images/login-form-icon-eye-gray.svg");
+  }
+  .tm-login-form .uk-button {
+    margin-top: 10px;
+  }
+  .tm-login-form .tm-grid-stay-logged {
+    margin-top: 24px;
+    font-size: 14px;
+    letter-spacing: 0.25px;
+  }
+  @media (min-width: 480px) {
+    .tm-login-form .tm-grid-stay-logged {
+      padding: 0 16px;
+    }
+  }
+  .tm-login-form .tm-grid-stay-logged input {
+    width: 25px;
+    height: 25px;
+    margin-right: 17px;
+    border-radius: 7px;
+  }
+  .tm-login-form .tm-grid-stay-logged .tm-lost-password {
+    color: #cc0055;
+    font-weight: bold;
+  }
+  .tm-login-form .tm-account {
+    margin-top: 20px;
+    padding: 17px 10px 16px 70px;
+    border-radius: 16px;
+    background-color: #def4ed;
+    background-image: url("images/login-form-icon-user.svg");
+    background-repeat: no-repeat;
+    background-position: 14px 17px;
+  }
+  @media (min-width: 480px) {
+    .tm-login-form .tm-account {
+      margin-top: 31px;
+    }
+  }
+  .tm-login-form .tm-account p {
+    margin-bottom: 3px;
+    color: #4f4f4f;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 22px;
+    letter-spacing: 0.2px;
+  }
+  .tm-login-form .tm-account a {
+    color: #009e77;
+  }
+  .tm-login-form .tm-account br {
+    display: none;
+  }
+  @media (min-width: 360px) {
+    .tm-login-form .tm-account br {
+      display: inline;
+    }
+  }
+  .tm-login-form .tm-grid-help {
+    margin-top: 17px;
+  }
+  .tm-login-form .tm-grid-help a {
+    position: relative;
+    padding: 10px 10px  10px 38px;
+    color: #cc0055;
+    background-repeat: no-repeat;
+    background-position: left center;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 24px;
+    letter-spacing: 0.2px;
+  }
+  .tm-login-form .tm-grid-help a.tm-help {
+    background-image: url("images/login-form-icon-help.svg");
+  }
+  @media (min-width: 480px) {
+    .tm-login-form .tm-grid-help a.tm-help {
+      left: 19px;
+    }
+  }
+  .tm-login-form .tm-grid-help a.tm-contact {
+    background-image: url("images/login-form-icon-phone.svg");
+  }
+  @media (min-width: 480px) {
+    .tm-login-form .tm-grid-help a.tm-contact {
+      left: -12px;
+    }
+  }
